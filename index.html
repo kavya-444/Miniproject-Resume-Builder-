@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Builder</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Main Script -->
+  <script src="script.js" defer></script>
+  <!-- html2pdf Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+  <div class="container mx-auto p-6">
+    <h1 class="text-4xl font-bold text-center text-blue-400">Resume Builder</h1>
+
+    <div class="flex flex-col md:flex-row mt-6">
+      <!-- Form Section -->
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg md:w-1/2">
+        <h2 class="text-2xl font-semibold text-blue-300">Enter Your Details</h2>
+        <label class="block mt-4">Full Name:</label>
+        <input type="text" id="name" placeholder="John Doe" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+        
+        <label class="block mt-4">Email:</label>
+        <input type="email" id="email" placeholder="john@example.com" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+        
+        <label class="block mt-4">Phone:</label>
+        <input type="text" id="phone" placeholder="(123) 456-7890" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+        
+        <label class="block mt-4">Address:</label>
+        <input type="text" id="address" placeholder="123 Main St, City, Country" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+        
+        <label class="block mt-4">Summary:</label>
+        <textarea id="summary" placeholder="A short professional summary" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600"></textarea>
+        
+        <label class="block mt-4">Skills (comma-separated):</label>
+        <input type="text" id="skills" placeholder="HTML, CSS, JavaScript" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+        
+        <label class="block mt-4">Education:</label>
+        <input type="text" id="education" placeholder="B.Sc. in Computer Science" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+        
+        <label class="block mt-4">Experience:</label>
+        <textarea id="experience" placeholder="Describe your experience" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600"></textarea>
+        
+        <button onclick="generateResume()" class="mt-4 w-full bg-blue-500 hover:bg-blue-600 p-3 rounded-lg transition">
+          Generate Resume
+        </button>
+      </div>
+
+      <!-- Resume Preview Section -->
+      <div class="md:w-1/2 mt-6 md:mt-0 md:ml-6">
+        <h2 class="text-2xl font-semibold text-blue-300">Preview Resume</h2>
+        <div id="resume-output" class="bg-white text-gray-900 p-6 mt-4 rounded-lg shadow-lg">
+          <p class="text-center text-gray-500">Your resume preview will appear here.</p>
+        </div>
+        <button onclick="downloadPDF()" class="mt-4 w-full bg-green-500 hover:bg-green-600 p-3 rounded-lg transition">
+          Download PDF
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
